@@ -20,9 +20,9 @@ class TestApi(unittest.TestCase):
         We need to test for stored values if class was
         initialized correctly.
         """
-        self.assertEquals(self.sc._email, 'foo@bar.com')
-        self.assertEquals(self.sc._apikey, 'test_api_key')
-        self.assertEquals(self.sc._aid, 'test_api_name')
+        self.assertEquals(self.cr._email, 'foo@bar.com')
+        self.assertEquals(self.cr._apikey, 'test_api_key')
+        self.assertEquals(self.cr._aid, 'test_api_name')
         self.assertIsInstance(self.cr, ChimpRewriter)
 
     @mock.patch('chimprewriter.urllib2')
@@ -34,7 +34,7 @@ class TestApi(unittest.TestCase):
 
         # test call
         self.assertEquals(
-            self.sc.unique_variation(u'My cat is über cool.'),
+            self.cr.unique_variation(u'My cat is über cool.'),
             u'My cat is über cold.',
         )
 
