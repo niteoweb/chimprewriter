@@ -10,8 +10,6 @@ import os
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-version = read('src', 'chimprewriter', 'version.txt').strip()
-
 long_description = \
     read('README.rst') + \
     read('docs', 'HISTORY.rst') + \
@@ -19,7 +17,7 @@ long_description = \
 
 setup(
     name='chimprewriter',
-    version=version,
+    version="0.1",
     description="Python bindings for ChimpRewriter API",
     long_description=long_description,
     classifiers=[
